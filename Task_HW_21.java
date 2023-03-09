@@ -39,19 +39,19 @@ public class Task_HW_21 {
     }
 
     static int[] convertFromStringToInt(String [] arr) {
-        int [] array_result = new int [arr.length];
+        int [] arrayResult = new int [arr.length];
         for (int i = 0; i < arr.length; i++) {
-            array_result[i] = Integer.parseInt(arr[i]);
+            arrayResult[i] = Integer.parseInt(arr[i]);
         }
-        return array_result;
+        return arrayResult;
     }
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         System.out.printf("Enter order of number by comma for creating array: ");
         String numbers = scn.nextLine();
         numbers = numbers.replace(" ", "");
-        String [] array_numbers = numbers.split(",");
-        sortByBubble(convertFromStringToInt(array_numbers));
+        String [] arrayNumbers = numbers.split(",");
+        sortByBubble(convertFromStringToInt(arrayNumbers));
         scn.close();
     }
 }
