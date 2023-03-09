@@ -6,33 +6,33 @@ import java.util.Scanner;
 
 public class Task_HW_23 {   
 
-    static int get_sum(int a, int b) {
+    static int getSum(int a, int b) {
         return a + b;
     }
 
-    static int get_subtraction(int a, int b) {
+    static int getSubtraction(int a, int b) {
         return a - b;
     }
 
-    static int get_product(int a, int b) {
+    static int getProduct(int a, int b) {
         return a * b;
     }
 
-    static double get_division(int a, int b) {
+    static double getDivision(int a, int b) {
         return (double) a / (double) b;
     }
 
-    static String get_result_of_operation(int a, int b, String sign_operation) {
-        switch (sign_operation) {
+    static String getResultOfOperation(int a, int b, String signOperation) {
+        switch (signOperation) {
         case "+":
-            return String.format("%d %s %d = %d \n", a, sign_operation, b, get_sum(a, b));
+            return String.format("%d %s %d = %d \n", a, signOperation, b, getSum(a, b));
         case "-":
-            return String.format("%d %s %d = %d \n", a, sign_operation, b, get_subtraction(a, b));
+            return String.format("%d %s %d = %d \n", a, signOperation, b, getSubtraction(a, b));
         case "*":
-            return String.format("%d %s %d = %d \n", a, sign_operation, b, get_product(a, b));
+            return String.format("%d %s %d = %d \n", a, signOperation, b, getProduct(a, b));
         case "/":
             if (b != 0) {
-                return String.format("%d %s %d = %.4f \n", a, sign_operation, b, get_division(a, b));
+                return String.format("%d %s %d = %.4f \n", a, signOperation, b, getDivision(a, b));
             } else {
                 return String.format("ERROR: division by zero!!! \n");
             }
@@ -60,19 +60,19 @@ public class Task_HW_23 {
             a = scn.nextInt();
             Scanner sc = new Scanner(System.in);
             System.out.printf("Enter sign of operation from list: +, -, *, / \n");
-            String sign_operation = "";
+            String signOperation = "";
             if (sc.hasNextLine()) {
-                sign_operation = sc.nextLine();
+                signOperation = sc.nextLine();
             }
-            if (sign_operation.equals("+") || sign_operation.equals("-") || sign_operation.equals("*")
-                    || sign_operation.equals("/")) {
+            if (signOperation.equals("+") || signOperation.equals("-") || signOperation.equals("*")
+                    || signOperation.equals("/")) {
                 int b = 0;
                 System.out.printf("Enter second number: ");
                 if (!scn.hasNextInt()) {
                     System.out.println("You entered wrong number!!!");
                 } else {
                     b = scn.nextInt();                    
-                    String result = get_result_of_operation(a, b, sign_operation);
+                    String result = getResultOfOperation(a, b, signOperation);
                     System.out.println(result);
                     writeResultsToFile(result);
                 }
