@@ -29,18 +29,18 @@ public class Task_HW_22 {
 
     static String[][][] getArrayData(String[] linesArray) {
         int size = linesArray.length;
-        String[][] dataArray_2 = new String[size][3];
-        String[][][] dataArray_3 = new String[size][3][2];
+        String[][] dataArray2 = new String[size][3];
+        String[][][] dataArray3 = new String[size][3][2];
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < 3; j++) {
-                dataArray_2[i][j] = linesArray[i].split(",")[j];
+                dataArray2[i][j] = linesArray[i].split(",")[j];
                 for (int k = 0; k < 2; k++) {
-                    dataArray_3[i][j][k] = dataArray_2[i][j].split(":")[k];
+                    dataArray3[i][j][k] = dataArray2[i][j].split(":")[k];
                 }
             }
         }
-        return dataArray_3;
+        return dataArray3;
     }
 
     static void printResult(String[][][] dataArray, int linesCount) {
